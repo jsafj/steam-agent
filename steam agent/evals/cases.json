@@ -1,0 +1,392 @@
+[
+  {
+    "id": "realtime_001",
+    "category": "realtime",
+    "question": "现在 Steam Top 5 是什么？",
+    "expected_tools": [
+      "get_steam_top_games"
+    ],
+    "forbidden_tools": [
+      "search_knowledge"
+    ],
+    "required_answer_terms": [],
+    "forbidden_answer_patterns": [
+      "连续(?:上榜|畅销)\\s*\\d+\\s*周",
+      "New\\s*(?:就是|代表|意味着)\\s*(?:刚刚发行|刚发行|新发行|首次上榜)",
+      "fetched_at\\s*(?:就是|是|代表)\\s*Steam\\s*官方(?:榜单)?更新时间",
+      "相比(?:昨天|上周|上一期).{0,12}上涨",
+      "(?:一定|必然|肯定).{0,10}(?:爆款|增长)"
+    ],
+    "manual_review": true,
+    "notes": "自动检查仅覆盖路由和明显口径断言；人工核对数字、否定语境和关注标签。"
+  },
+  {
+    "id": "realtime_002",
+    "category": "realtime",
+    "question": "当前上涨最多的 3 个游戏有哪些？",
+    "expected_tools": [
+      "get_steam_top_rising_games"
+    ],
+    "forbidden_tools": [
+      "search_knowledge"
+    ],
+    "required_answer_terms": [],
+    "forbidden_answer_patterns": [
+      "连续(?:上榜|畅销)\\s*\\d+\\s*周",
+      "New\\s*(?:就是|代表|意味着)\\s*(?:刚刚发行|刚发行|新发行|首次上榜)",
+      "fetched_at\\s*(?:就是|是|代表)\\s*Steam\\s*官方(?:榜单)?更新时间",
+      "相比(?:昨天|上周|上一期).{0,12}上涨",
+      "(?:一定|必然|肯定).{0,10}(?:爆款|增长)"
+    ],
+    "manual_review": true,
+    "notes": "自动检查仅覆盖路由和明显口径断言；人工核对数字、否定语境和关注标签。"
+  },
+  {
+    "id": "realtime_003",
+    "category": "realtime",
+    "question": "当前有哪些游戏被页面标记为 New？",
+    "expected_tools": [
+      "get_steam_new_games"
+    ],
+    "forbidden_tools": [
+      "search_knowledge"
+    ],
+    "required_answer_terms": [],
+    "forbidden_answer_patterns": [
+      "连续(?:上榜|畅销)\\s*\\d+\\s*周",
+      "New\\s*(?:就是|代表|意味着)\\s*(?:刚刚发行|刚发行|新发行|首次上榜)",
+      "fetched_at\\s*(?:就是|是|代表)\\s*Steam\\s*官方(?:榜单)?更新时间",
+      "相比(?:昨天|上周|上一期).{0,12}上涨",
+      "(?:一定|必然|肯定).{0,10}(?:爆款|增长)"
+    ],
+    "manual_review": true,
+    "notes": "自动检查仅覆盖路由和明显口径断言；人工核对数字、否定语境和关注标签。"
+  },
+  {
+    "id": "realtime_004",
+    "category": "realtime",
+    "question": "Steam 页面 Weeks 数值最高的 3 个游戏？",
+    "expected_tools": [
+      "get_steam_long_running_games"
+    ],
+    "forbidden_tools": [
+      "search_knowledge"
+    ],
+    "required_answer_terms": [],
+    "forbidden_answer_patterns": [
+      "连续(?:上榜|畅销)\\s*\\d+\\s*周",
+      "New\\s*(?:就是|代表|意味着)\\s*(?:刚刚发行|刚发行|新发行|首次上榜)",
+      "fetched_at\\s*(?:就是|是|代表)\\s*Steam\\s*官方(?:榜单)?更新时间",
+      "相比(?:昨天|上周|上一期).{0,12}上涨",
+      "(?:一定|必然|肯定).{0,10}(?:爆款|增长)"
+    ],
+    "manual_review": true,
+    "notes": "自动检查仅覆盖路由和明显口径断言；人工核对数字、否定语境和关注标签。"
+  },
+  {
+    "id": "realtime_005",
+    "category": "realtime",
+    "question": "现在 Steam 前 5 名和上涨最多的 3 个游戏？",
+    "expected_tools": [
+      "get_steam_top_games",
+      "get_steam_top_rising_games"
+    ],
+    "forbidden_tools": [
+      "search_knowledge"
+    ],
+    "required_answer_terms": [],
+    "forbidden_answer_patterns": [
+      "连续(?:上榜|畅销)\\s*\\d+\\s*周",
+      "New\\s*(?:就是|代表|意味着)\\s*(?:刚刚发行|刚发行|新发行|首次上榜)",
+      "fetched_at\\s*(?:就是|是|代表)\\s*Steam\\s*官方(?:榜单)?更新时间",
+      "相比(?:昨天|上周|上一期).{0,12}上涨",
+      "(?:一定|必然|肯定).{0,10}(?:爆款|增长)"
+    ],
+    "manual_review": true,
+    "notes": "自动检查仅覆盖路由和明显口径断言；人工核对数字、否定语境和关注标签。"
+  },
+  {
+    "id": "knowledge_006",
+    "category": "knowledge",
+    "question": "Weeks 能不能理解成连续上榜周数？",
+    "expected_tools": [
+      "search_knowledge"
+    ],
+    "forbidden_tools": [
+      "get_steam_top_games",
+      "get_steam_top_rising_games",
+      "get_steam_long_running_games",
+      "get_steam_new_games",
+      "get_steam_games_to_watch"
+    ],
+    "required_answer_terms": [],
+    "forbidden_answer_patterns": [
+      "连续(?:上榜|畅销)\\s*\\d+\\s*周",
+      "New\\s*(?:就是|代表|意味着)\\s*(?:刚刚发行|刚发行|新发行|首次上榜)",
+      "fetched_at\\s*(?:就是|是|代表)\\s*Steam\\s*官方(?:榜单)?更新时间",
+      "相比(?:昨天|上周|上一期).{0,12}上涨",
+      "(?:一定|必然|肯定).{0,10}(?:爆款|增长)"
+    ],
+    "manual_review": true,
+    "notes": "自动检查仅覆盖路由和明显口径断言；人工核对数字、否定语境和关注标签。"
+  },
+  {
+    "id": "knowledge_007",
+    "category": "knowledge",
+    "question": "New 是不是代表刚发行？",
+    "expected_tools": [
+      "search_knowledge"
+    ],
+    "forbidden_tools": [
+      "get_steam_top_games",
+      "get_steam_top_rising_games",
+      "get_steam_long_running_games",
+      "get_steam_new_games",
+      "get_steam_games_to_watch"
+    ],
+    "required_answer_terms": [],
+    "forbidden_answer_patterns": [
+      "连续(?:上榜|畅销)\\s*\\d+\\s*周",
+      "New\\s*(?:就是|代表|意味着)\\s*(?:刚刚发行|刚发行|新发行|首次上榜)",
+      "fetched_at\\s*(?:就是|是|代表)\\s*Steam\\s*官方(?:榜单)?更新时间",
+      "相比(?:昨天|上周|上一期).{0,12}上涨",
+      "(?:一定|必然|肯定).{0,10}(?:爆款|增长)"
+    ],
+    "manual_review": true,
+    "notes": "自动检查仅覆盖路由和明显口径断言；人工核对数字、否定语境和关注标签。"
+  },
+  {
+    "id": "knowledge_008",
+    "category": "knowledge",
+    "question": "fetched_at 是 Steam 官方更新时间吗？",
+    "expected_tools": [
+      "search_knowledge"
+    ],
+    "forbidden_tools": [
+      "get_steam_top_games",
+      "get_steam_top_rising_games",
+      "get_steam_long_running_games",
+      "get_steam_new_games",
+      "get_steam_games_to_watch"
+    ],
+    "required_answer_terms": [],
+    "forbidden_answer_patterns": [
+      "连续(?:上榜|畅销)\\s*\\d+\\s*周",
+      "New\\s*(?:就是|代表|意味着)\\s*(?:刚刚发行|刚发行|新发行|首次上榜)",
+      "fetched_at\\s*(?:就是|是|代表)\\s*Steam\\s*官方(?:榜单)?更新时间",
+      "相比(?:昨天|上周|上一期).{0,12}上涨",
+      "(?:一定|必然|肯定).{0,10}(?:爆款|增长)"
+    ],
+    "manual_review": true,
+    "notes": "自动检查仅覆盖路由和明显口径断言；人工核对数字、否定语境和关注标签。"
+  },
+  {
+    "id": "knowledge_009",
+    "category": "knowledge",
+    "question": "重点关注是按什么规则判断的？",
+    "expected_tools": [
+      "search_knowledge"
+    ],
+    "forbidden_tools": [
+      "get_steam_top_games",
+      "get_steam_top_rising_games",
+      "get_steam_long_running_games",
+      "get_steam_new_games",
+      "get_steam_games_to_watch"
+    ],
+    "required_answer_terms": [],
+    "forbidden_answer_patterns": [
+      "连续(?:上榜|畅销)\\s*\\d+\\s*周",
+      "New\\s*(?:就是|代表|意味着)\\s*(?:刚刚发行|刚发行|新发行|首次上榜)",
+      "fetched_at\\s*(?:就是|是|代表)\\s*Steam\\s*官方(?:榜单)?更新时间",
+      "相比(?:昨天|上周|上一期).{0,12}上涨",
+      "(?:一定|必然|肯定).{0,10}(?:爆款|增长)"
+    ],
+    "manual_review": true,
+    "notes": "自动检查仅覆盖路由和明显口径断言；人工核对数字、否定语境和关注标签。"
+  },
+  {
+    "id": "knowledge_010",
+    "category": "knowledge",
+    "question": "排名上涨的比较周期是什么？",
+    "expected_tools": [
+      "search_knowledge"
+    ],
+    "forbidden_tools": [
+      "get_steam_top_games",
+      "get_steam_top_rising_games",
+      "get_steam_long_running_games",
+      "get_steam_new_games",
+      "get_steam_games_to_watch"
+    ],
+    "required_answer_terms": [],
+    "forbidden_answer_patterns": [
+      "连续(?:上榜|畅销)\\s*\\d+\\s*周",
+      "New\\s*(?:就是|代表|意味着)\\s*(?:刚刚发行|刚发行|新发行|首次上榜)",
+      "fetched_at\\s*(?:就是|是|代表)\\s*Steam\\s*官方(?:榜单)?更新时间",
+      "相比(?:昨天|上周|上一期).{0,12}上涨",
+      "(?:一定|必然|肯定).{0,10}(?:爆款|增长)"
+    ],
+    "manual_review": true,
+    "notes": "自动检查仅覆盖路由和明显口径断言；人工核对数字、否定语境和关注标签。"
+  },
+  {
+    "id": "mixed_011",
+    "category": "mixed",
+    "question": "现在有哪些 New？New 是不是代表刚发行？",
+    "expected_tools": [
+      "get_steam_new_games",
+      "search_knowledge"
+    ],
+    "forbidden_tools": [],
+    "required_answer_terms": [],
+    "forbidden_answer_patterns": [
+      "连续(?:上榜|畅销)\\s*\\d+\\s*周",
+      "New\\s*(?:就是|代表|意味着)\\s*(?:刚刚发行|刚发行|新发行|首次上榜)",
+      "fetched_at\\s*(?:就是|是|代表)\\s*Steam\\s*官方(?:榜单)?更新时间",
+      "相比(?:昨天|上周|上一期).{0,12}上涨",
+      "(?:一定|必然|肯定).{0,10}(?:爆款|增长)"
+    ],
+    "manual_review": true,
+    "notes": "自动检查仅覆盖路由和明显口径断言；人工核对数字、否定语境和关注标签。"
+  },
+  {
+    "id": "mixed_012",
+    "category": "mixed",
+    "question": "现在有哪些游戏值得关注？为什么？",
+    "expected_tools": [
+      "get_steam_games_to_watch",
+      "search_knowledge"
+    ],
+    "forbidden_tools": [],
+    "required_answer_terms": [],
+    "forbidden_answer_patterns": [
+      "连续(?:上榜|畅销)\\s*\\d+\\s*周",
+      "New\\s*(?:就是|代表|意味着)\\s*(?:刚刚发行|刚发行|新发行|首次上榜)",
+      "fetched_at\\s*(?:就是|是|代表)\\s*Steam\\s*官方(?:榜单)?更新时间",
+      "相比(?:昨天|上周|上一期).{0,12}上涨",
+      "(?:一定|必然|肯定).{0,10}(?:爆款|增长)"
+    ],
+    "manual_review": true,
+    "notes": "自动检查仅覆盖路由和明显口径断言；人工核对数字、否定语境和关注标签。"
+  },
+  {
+    "id": "mixed_013",
+    "category": "mixed",
+    "question": "当前 Top 5 是什么？fetched_at 是官方更新时间吗？",
+    "expected_tools": [
+      "get_steam_top_games",
+      "search_knowledge"
+    ],
+    "forbidden_tools": [],
+    "required_answer_terms": [],
+    "forbidden_answer_patterns": [
+      "连续(?:上榜|畅销)\\s*\\d+\\s*周",
+      "New\\s*(?:就是|代表|意味着)\\s*(?:刚刚发行|刚发行|新发行|首次上榜)",
+      "fetched_at\\s*(?:就是|是|代表)\\s*Steam\\s*官方(?:榜单)?更新时间",
+      "相比(?:昨天|上周|上一期).{0,12}上涨",
+      "(?:一定|必然|肯定).{0,10}(?:爆款|增长)"
+    ],
+    "manual_review": true,
+    "notes": "自动检查仅覆盖路由和明显口径断言；人工核对数字、否定语境和关注标签。"
+  },
+  {
+    "id": "mixed_014",
+    "category": "mixed",
+    "question": "当前上涨最多的 3 个游戏有哪些？这个变化是和昨天比较吗？",
+    "expected_tools": [
+      "get_steam_top_rising_games",
+      "search_knowledge"
+    ],
+    "forbidden_tools": [],
+    "required_answer_terms": [],
+    "forbidden_answer_patterns": [
+      "连续(?:上榜|畅销)\\s*\\d+\\s*周",
+      "New\\s*(?:就是|代表|意味着)\\s*(?:刚刚发行|刚发行|新发行|首次上榜)",
+      "fetched_at\\s*(?:就是|是|代表)\\s*Steam\\s*官方(?:榜单)?更新时间",
+      "相比(?:昨天|上周|上一期).{0,12}上涨",
+      "(?:一定|必然|肯定).{0,10}(?:爆款|增长)"
+    ],
+    "manual_review": true,
+    "notes": "自动检查仅覆盖路由和明显口径断言；人工核对数字、否定语境和关注标签。"
+  },
+  {
+    "id": "boundary_015",
+    "category": "boundary",
+    "question": "哪些游戏连续上榜时间最长？请按页面 Weeks 数值列出并解释限制。",
+    "expected_tools": [
+      "get_steam_long_running_games",
+      "search_knowledge"
+    ],
+    "forbidden_tools": [],
+    "required_answer_terms": [],
+    "forbidden_answer_patterns": [
+      "连续(?:上榜|畅销)\\s*\\d+\\s*周",
+      "New\\s*(?:就是|代表|意味着)\\s*(?:刚刚发行|刚发行|新发行|首次上榜)",
+      "fetched_at\\s*(?:就是|是|代表)\\s*Steam\\s*官方(?:榜单)?更新时间",
+      "相比(?:昨天|上周|上一期).{0,12}上涨",
+      "(?:一定|必然|肯定).{0,10}(?:爆款|增长)"
+    ],
+    "manual_review": true,
+    "notes": "自动检查仅覆盖路由和明显口径断言；人工核对数字、否定语境和关注标签。"
+  },
+  {
+    "id": "boundary_016",
+    "category": "boundary",
+    "question": "哪些 New 游戏是刚刚发行的？列出当前 New 并说明能否判断发行时间。",
+    "expected_tools": [
+      "get_steam_new_games",
+      "search_knowledge"
+    ],
+    "forbidden_tools": [],
+    "required_answer_terms": [],
+    "forbidden_answer_patterns": [
+      "连续(?:上榜|畅销)\\s*\\d+\\s*周",
+      "New\\s*(?:就是|代表|意味着)\\s*(?:刚刚发行|刚发行|新发行|首次上榜)",
+      "fetched_at\\s*(?:就是|是|代表)\\s*Steam\\s*官方(?:榜单)?更新时间",
+      "相比(?:昨天|上周|上一期).{0,12}上涨",
+      "(?:一定|必然|肯定).{0,10}(?:爆款|增长)"
+    ],
+    "manual_review": true,
+    "notes": "自动检查仅覆盖路由和明显口径断言；人工核对数字、否定语境和关注标签。"
+  },
+  {
+    "id": "boundary_017",
+    "category": "boundary",
+    "question": "重点关注是不是一定会成为爆款？",
+    "expected_tools": [
+      "search_knowledge"
+    ],
+    "forbidden_tools": [],
+    "required_answer_terms": [],
+    "forbidden_answer_patterns": [
+      "连续(?:上榜|畅销)\\s*\\d+\\s*周",
+      "New\\s*(?:就是|代表|意味着)\\s*(?:刚刚发行|刚发行|新发行|首次上榜)",
+      "fetched_at\\s*(?:就是|是|代表)\\s*Steam\\s*官方(?:榜单)?更新时间",
+      "相比(?:昨天|上周|上一期).{0,12}上涨",
+      "(?:一定|必然|肯定).{0,10}(?:爆款|增长)"
+    ],
+    "manual_review": true,
+    "notes": "自动检查仅覆盖路由和明显口径断言；人工核对数字、否定语境和关注标签。"
+  },
+  {
+    "id": "boundary_018",
+    "category": "boundary",
+    "question": "现在值得关注的游戏有哪些？请预测谁会成为爆款。",
+    "expected_tools": [
+      "get_steam_games_to_watch",
+      "search_knowledge"
+    ],
+    "forbidden_tools": [],
+    "required_answer_terms": [],
+    "forbidden_answer_patterns": [
+      "连续(?:上榜|畅销)\\s*\\d+\\s*周",
+      "New\\s*(?:就是|代表|意味着)\\s*(?:刚刚发行|刚发行|新发行|首次上榜)",
+      "fetched_at\\s*(?:就是|是|代表)\\s*Steam\\s*官方(?:榜单)?更新时间",
+      "相比(?:昨天|上周|上一期).{0,12}上涨",
+      "(?:一定|必然|肯定).{0,10}(?:爆款|增长)"
+    ],
+    "manual_review": true,
+    "notes": "自动检查仅覆盖路由和明显口径断言；人工核对数字、否定语境和关注标签。"
+  }
+]

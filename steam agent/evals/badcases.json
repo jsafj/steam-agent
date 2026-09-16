@@ -1,0 +1,65 @@
+[
+  {
+    "timestamp": "2026-09-15T14:57:39.828088+00:00",
+    "case_id": "user_acceptance_global_source",
+    "question": "现在有哪些游戏值得关注？为什么？",
+    "expected_tools": [
+      "get_steam_games_to_watch"
+    ],
+    "actual_tools": null,
+    "answer": null,
+    "failure_reasons": [
+      "虚构 Global 来源"
+    ],
+    "category": [
+      "answer_boundary"
+    ],
+    "evidence_source": "用户报告的真实验收；未提供完整原始回答或工具 Trace",
+    "reported_summary": "用户报告：回答错误声称数据包含 Global 与 US 混合。",
+    "expected_behavior": "严格使用 Tool Result 的 source_url 和 region；US 不扩展为 Global。",
+    "status": "已加入最终回答约束，待真实复测",
+    "notes": "timestamp 为本次记录时间，不是原始验收时间；不伪造回答和实际工具列表。"
+  },
+  {
+    "timestamp": "2026-09-15T14:57:39.834447+00:00",
+    "case_id": "user_acceptance_snapshot_lifecycle",
+    "question": "现在有哪些游戏值得关注？为什么？",
+    "expected_tools": [
+      "get_steam_games_to_watch"
+    ],
+    "actual_tools": null,
+    "answer": null,
+    "failure_reasons": [
+      "错误描述实时 Snapshot"
+    ],
+    "category": [
+      "answer_boundary"
+    ],
+    "evidence_source": "用户报告的真实验收；未提供完整原始回答或工具 Trace",
+    "reported_summary": "用户报告：回答声称用户无法实时刷新或只能使用静态快照。",
+    "expected_behavior": "当前查询重新抓取；仅单次 run_agent 内共用 Snapshot。",
+    "status": "已加入最终回答约束，待真实复测",
+    "notes": "timestamp 为本次记录时间，不是原始验收时间；不伪造回答和实际工具列表。"
+  },
+  {
+    "timestamp": "2026-09-15T14:57:39.845584+00:00",
+    "case_id": "user_acceptance_invented_corrections",
+    "question": "现在有哪些游戏值得关注？为什么？",
+    "expected_tools": [
+      "get_steam_games_to_watch"
+    ],
+    "actual_tools": null,
+    "answer": null,
+    "failure_reasons": [
+      "Tool Result 外自行解释重复或数据混乱"
+    ],
+    "category": [
+      "answer_boundary"
+    ],
+    "evidence_source": "用户报告的真实验收；未提供完整原始回答或工具 Trace",
+    "reported_summary": "用户报告：回答出现重复游戏、额外修正说明及自行推断数据异常。",
+    "expected_behavior": "按原记录输出，不添加游戏、不因相似名称推断重复或修正数据。",
+    "status": "已加入最终回答约束，待真实复测",
+    "notes": "timestamp 为本次记录时间，不是原始验收时间；不伪造回答和实际工具列表。"
+  }
+]

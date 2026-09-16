@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Steam 榜单分析 Agent</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script defer src="{{ url_for('static', filename='app.js') }}"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <header><button id="home" class="brand-mark" type="button" title="返回首页" aria-label="返回首页"><span aria-hidden="true">←</span></button><div><h1>Steam 榜单分析 Agent</h1><p>实时榜单 · Python 分析 · Tool Calling · RAG</p></div><span class="region">US 榜单</span></header>
+    <main id="conversation">
+      <section id="welcome">
+        <span class="eyebrow">看见排名，理解变化</span>
+        <h2>今天的 Steam，<br>有哪些值得关注？</h2>
+        <p>你好，我可以帮你分析当前 Steam Top Selling US 榜单。</p>
+        <div class="examples">
+          <button type="button" data-question="现在 Steam Top 10 是什么？"><span>01 / 当前榜单</span>现在 Steam Top 10 是什么？ <b>↗</b></button>
+          <button type="button" data-question="当前上涨最多的游戏有哪些？"><span>02 / 排名变化</span>当前上涨最多的游戏有哪些？ <b>↗</b></button>
+          <button type="button" data-question="哪些游戏值得关注？为什么？"><span>03 / 关注信号</span>哪些游戏值得关注？为什么？ <b>↗</b></button>
+          <button type="button" data-question="Weeks 是什么意思？"><span>04 / 字段解释</span>Weeks 是什么意思？ <b>↗</b></button>
+        </div>
+      </section>
+      <div id="messages" role="log" aria-live="polite" aria-label="聊天消息"></div>
+    </main>
+    <footer>
+      <div id="status" role="status" aria-live="polite"></div>
+      <form id="chat-form">
+        <label class="sr-only" for="message">输入问题</label>
+        <textarea id="message" rows="2" maxlength="6000" placeholder="问问当前榜单，或了解一个字段…" required></textarea>
+        <button id="send" type="submit">发送 <span aria-hidden="true">↑</span></button>
+      </form>
+      <p class="hint">Enter 发送 · Shift + Enter 换行 · 每个问题独立分析，消息仅保留在本页</p>
+      <p class="disclaimer">当前榜单数据来自 Steam Top Selling US；分析基于项目规则与实时数据，不代表 Steam 官方推荐或预测。</p>
+    </footer>
+  </div>
+</body>
+</html>
