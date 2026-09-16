@@ -94,7 +94,7 @@ Download ZIP 获取项目后没有可复制的 `.env.example`，也可以直接�
 
 ```dotenv
 SILICONFLOW_API_KEY=your_api_key_here
-
+```
 
 ### 5. 启动 Web
 
