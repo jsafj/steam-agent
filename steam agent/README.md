@@ -84,6 +84,18 @@ SILICONFLOW_API_KEY=your_api_key_here
 
 程序通过 `python-dotenv` 加载项目根目录 `.env`，再读取 `SILICONFLOW_API_KEY` 环境变量。**进程已有环境变量优先于 `.env`**，因此旧环境变量可能覆盖新配置。无需在 `.env` 中设置模型或 API 地址，当前代码没有这些配置项。修改 Key 后请重启服务。
 
+#### 如果下载的项目中没有 `.env.example`
+
+`.env` 属于本地私有配置文件，不会随项目提供。如果通过 GitHub
+Download ZIP 获取项目后没有可复制的 `.env.example`，也可以直接在
+项目根目录手动新建一个名为 `.env` 的文件。
+
+文件内容如下：
+
+```dotenv
+SILICONFLOW_API_KEY=your_api_key_here
+
+
 ### 5. 启动 Web
 
 ```powershell
