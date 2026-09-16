@@ -90,7 +90,7 @@ SILICONFLOW_API_KEY=your_api_key_here
 Download ZIP 获取项目后没有可复制的 `.env.example`，也可以直接在
 项目根目录手动新建一个名为 `.env` 的文件。
 
-文件内容如下：
+.env文件内容如下：
 
 ```dotenv
 SILICONFLOW_API_KEY=your_api_key_here
